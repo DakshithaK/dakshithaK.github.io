@@ -167,8 +167,8 @@ function setupNoteTilt() {
       const rect = note.getBoundingClientRect();
       const ratioX = (event.clientX - rect.left) / rect.width - 0.5;
       const ratioY = (event.clientY - rect.top) / rect.height - 0.5;
-      const tiltY = ratioX * 6;
-      const tiltX = -ratioY * 5;
+      const tiltY = ratioX * 16;
+      const tiltX = -ratioY * 14;
       const shiftX = ratioX * 3.5;
       const shiftY = ratioY * 3.5;
 
