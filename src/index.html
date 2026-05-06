@@ -1,22 +1,89 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Dakshitha | Portfolio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio website starter inspired by editorial and playful design."
+    />
+    <title>Dakshitha K Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="custom-cursor" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="#home">Dakshitha K</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#home" data-nav-link>home</a>
+          <a href="#projects" data-nav-link>playground</a>
+          <a href="#about" data-nav-link>about</a>
+        </nav>
+      </div>
+    </header>
 
-<body>
-    <h1>Hello, I’m Dakshitha</h1>
-    <p>Backend / Full Stack Engineer</p>
+    <main>
+      <section id="home" class="section home">
+        <div class="container hero-collage reveal">
+          <article class="note note-main">
+            <p>
+              Dakshitha is an interdisciplinary designer with a love for
+              prototyping, storytelling, and visual craft.
+            </p>
+          </article>
+          <article class="note note-side">
+            <p>Currently designing + building, exploring, and tinkering.</p>
+          </article>
+          <article class="note note-tag" aria-hidden="true">
+            <p>你好</p>
+          </article>
+          <article class="note note-icon" aria-hidden="true">
+            <p>{o}<br />-:{|},<br />-/\</p>
+          </article>
+        </div>
+      </section>
 
-    <h2>Projects</h2>
-    <ul>
-        <li>Task Management System</li>
-        <li>Scheduler Expiration System</li>
-    </ul>
+      <section id="projects" class="section projects">
+        <div class="container">
+          <div id="project-list" class="project-list" aria-live="polite"></div>
+        </div>
+      </section>
 
-    <h2>Contact</h2>
-    <p>Email: dakshithakrishnagowda@gmail.com</p>
-</body>
+      <section id="about" class="section about">
+        <div class="container reveal">
+          <p class="meta">About</p>
+          <h2>Say Hi</h2>
+          <p>
+            A visual-first portfolio starter inspired by editorial layouts. The
+            entire site runs on plain HTML, CSS, and JavaScript, so you can
+            customize sections quickly without a framework.
+          </p>
+          <div class="links">
+            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer"
+              >LinkedIn</a
+            >
+            <a href="https://twitter.com" target="_blank" rel="noreferrer"
+              >Twitter</a
+            >
+            <a href="#" aria-label="Open your resume PDF">Resume</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Made with care and lots of coffee.</p>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
