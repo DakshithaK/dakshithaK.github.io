@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,12 +8,22 @@
       name="description"
       content="Portfolio website starter inspired by editorial and playful design."
     />
+    <script>
+      const savedTheme = localStorage.getItem("theme");
+      const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const initialTheme = savedTheme ?? (systemPrefersDark ? "dark" : "light");
+      document.documentElement.dataset.theme = initialTheme;
+    </script>
     <title>Dakshitha K Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🌻</text></svg>'
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -21,51 +32,220 @@
     <header class="site-header">
       <div class="container header-row">
         <a class="brand" href="#home">Dakshitha K</a>
-        <nav class="site-nav" aria-label="Primary">
-          <a href="#home" data-nav-link>home</a>
-          <a href="#projects" data-nav-link>playground</a>
-          <a href="#about" data-nav-link>about</a>
-        </nav>
+        <div class="header-actions">
+          <nav class="site-nav" aria-label="Primary">
+            <a href="#home" data-nav-link>home</a>
+            <a href="#stack" data-nav-link>stack</a>
+            <a href="#projects" data-nav-link>projects</a>
+            <a href="#experience" data-nav-link>experience</a>
+            <a href="#about" data-nav-link>contact</a>
+          </nav>
+          <label class="mechanical-toggle" aria-label="Toggle light and dark theme">
+            <input id="theme-toggle" type="checkbox" />
+            <div class="slider">
+              <div class="glow"></div>
+              <div class="thumb">
+                <div class="thumb-details"></div>
+              </div>
+            </div>
+          </label>
+        </div>
       </div>
     </header>
 
     <main>
       <section id="home" class="section home">
         <div class="container hero-collage reveal">
+          <div class="hero-sky" aria-hidden="true">
+            <div class="hero-light-waves">
+              <svg
+                class="wave-ribbon wave-ribbon-back"
+                viewBox="0 0 1200 900"
+                preserveAspectRatio="none"
+              >
+                <path d="M-180 118C-10 34 82 170 178 208C278 248 334 170 430 176C574 184 620 278 748 284C898 292 998 146 1154 176C1260 196 1346 290 1452 340" />
+                <path d="M-180 132C-6 50 90 180 190 216C292 252 344 168 444 170C590 172 638 274 766 288C910 304 1002 166 1150 196C1248 216 1336 302 1452 356" />
+                <path d="M-180 154C18 78 114 192 214 226C312 260 358 164 462 158C608 150 662 264 788 286C924 310 1008 198 1144 236C1234 260 1324 326 1452 388" />
+                <path d="M-180 176C36 104 138 204 244 232C344 258 382 150 492 138C634 122 700 250 820 270C942 290 1022 236 1140 280C1224 312 1318 360 1452 430" />
+                <path d="M-180 208C72 144 186 214 296 224C394 232 422 132 536 118C668 102 742 228 852 242C966 256 1044 280 1144 328C1218 364 1318 404 1452 484" />
+                <path d="M-180 246C120 192 246 222 358 210C450 200 470 118 586 108C704 98 776 206 880 216C992 226 1072 328 1164 380C1236 420 1328 452 1452 536" />
+                <path d="M-180 290C182 244 320 228 430 186C514 154 526 112 640 110C742 108 804 194 904 202C1024 212 1100 374 1188 430C1258 474 1344 502 1452 580" />
+                <path d="M-180 340C250 304 402 230 504 170C578 126 590 116 694 122C790 128 842 198 936 206C1054 216 1128 404 1212 470C1278 520 1358 552 1452 626" />
+                <path d="M-180 394C332 362 486 238 580 166C648 114 656 124 746 142C836 160 884 220 972 236C1088 258 1156 430 1232 506C1296 570 1370 606 1452 670" />
+                <path d="M-180 446C420 416 576 268 658 188C716 132 720 146 798 170C878 194 922 248 1008 272C1120 304 1184 458 1248 548C1302 624 1376 654 1452 710" />
+                <path d="M-180 506C510 470 664 316 732 228C778 168 784 186 852 208C928 234 964 280 1044 320C1146 372 1208 504 1260 598C1308 680 1380 702 1452 748" />
+              </svg>
+              <svg
+                class="wave-ribbon wave-ribbon-front"
+                viewBox="0 0 1200 900"
+                preserveAspectRatio="none"
+              >
+                <path d="M-40 56C72 88 120 182 174 256C236 340 270 450 356 482C442 516 520 422 594 360C674 294 758 246 852 272C952 300 1004 410 1094 494C1176 572 1262 640 1380 676" />
+                <path d="M-22 74C86 102 132 194 188 268C250 348 286 452 374 482C460 512 534 412 606 346C684 278 764 232 858 254C956 278 1012 392 1104 478C1186 556 1268 632 1380 686" />
+                <path d="M4 104C110 128 152 214 208 286C270 366 306 458 392 478C478 496 552 392 626 320C700 248 776 200 864 214C958 228 1020 346 1112 438C1196 520 1274 612 1380 700" />
+                <path d="M34 142C142 160 186 240 240 306C302 380 336 462 420 470C504 474 576 360 652 280C722 206 790 168 874 174C966 182 1034 300 1120 396C1202 488 1280 590 1380 712" />
+                <path d="M76 196C192 204 238 272 292 330C350 392 382 460 464 454C544 450 614 320 690 236C756 162 814 142 892 144C980 144 1048 260 1132 360C1210 452 1288 568 1380 726" />
+                <path d="M126 258C252 252 300 304 352 352C410 406 438 456 516 438C590 420 660 274 736 192C796 126 842 126 914 124C996 124 1064 230 1146 336C1218 430 1294 554 1380 742" />
+                <path d="M182 324C316 298 362 330 412 370C468 416 494 448 564 418C636 390 708 236 780 160C834 104 872 122 938 120C1018 122 1082 220 1160 330C1228 428 1302 560 1380 768" />
+                <path d="M244 392C384 346 426 352 474 382C526 416 552 438 620 404C690 368 758 218 824 146C874 94 910 128 972 134C1048 144 1106 236 1178 344C1242 440 1312 578 1380 798" />
+                <path d="M306 458C452 392 492 372 536 390C586 412 612 432 676 402C744 372 806 222 870 154C918 106 950 146 1006 164C1076 188 1132 276 1200 382C1260 474 1322 608 1380 830" />
+                <path d="M364 520C516 444 554 414 596 412C642 412 670 434 732 412C800 388 856 246 918 184C962 140 990 172 1040 200C1100 236 1150 330 1214 438C1270 530 1328 646 1380 858" />
+                <path d="M420 578C578 500 616 468 654 454C696 438 728 446 790 432C856 418 912 286 972 228C1010 192 1038 210 1086 240C1140 280 1186 374 1242 482C1294 576 1344 694 1380 884" />
+              </svg>
+            </div>
+            <div class="hero-dark-glow glow-one"></div>
+            <div class="hero-dark-glow glow-two"></div>
+            <div class="stars stars-small"></div>
+            <div class="stars stars-medium"></div>
+            <div class="stars stars-large"></div>
+          </div>
           <article class="note note-main">
             <p>
-              Dakshitha is an interdisciplinary designer with a love for
-              prototyping, storytelling, and visual craft.
+              Dakshitha is a software engineer with 2.5 years of experience
+              building reliable product features, internal tools, and user-facing
+              web experiences.
             </p>
           </article>
           <article class="note note-side">
-            <p>Currently designing + building, exploring, and tinkering.</p>
+            <p>
+              Currently focused on full-stack development, clean architecture,
+              performance, and shipping practical products that scale.
+            </p>
           </article>
           <article class="note note-tag" aria-hidden="true">
-            <p>你好</p>
+            <p>2.5 yrs</p>
           </article>
           <article class="note note-icon" aria-hidden="true">
-            <p>{o}<br />-:{|},<br />-/\</p>
+            <p>dev<br />api<br />ui</p>
           </article>
         </div>
       </section>
 
+      <section id="stack" class="section stack">
+        <div class="container reveal">
+          <p class="meta">Tech Stack</p>
+          <div class="section-heading">
+            <h2>Engineering toolkit built for product delivery.</h2>
+            <p class="section-copy">
+              I work across frontend, backend, databases, and developer tooling,
+              with a focus on readable code, maintainable systems, and thoughtful
+              execution.
+            </p>
+          </div>
+          <div class="stack-grid">
+            <article class="stack-card">
+              <p class="stack-title">Frontend</p>
+              <p>JavaScript, TypeScript, React, Next.js, HTML, CSS</p>
+            </article>
+            <article class="stack-card">
+              <p class="stack-title">Backend</p>
+              <p>Node.js, Express, REST APIs, authentication, integrations</p>
+            </article>
+            <article class="stack-card">
+              <p class="stack-title">Data</p>
+              <p>PostgreSQL, MongoDB, schema design, query tuning</p>
+            </article>
+            <article class="stack-card">
+              <p class="stack-title">Workflow</p>
+              <p>Git, debugging, code reviews, CI/CD, testing, deployment</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="projects" class="section projects">
-        <div class="container">
+        <div class="container reveal">
+          <p class="meta">Projects</p>
+          <div class="section-heading">
+            <h2>Selected software work.</h2>
+            <p class="section-copy">
+              A mix of shipped features, product thinking, and engineering work
+              across interfaces, APIs, and systems.
+            </p>
+          </div>
           <div id="project-list" class="project-list" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="experience" class="section experience">
+        <div class="container reveal">
+          <p class="meta">Experience</p>
+          <div class="section-heading">
+            <h2>2.5 years building software in production environments.</h2>
+            <p class="section-copy">
+              My work spans feature delivery, platform improvements, debugging,
+              and collaborating closely with designers, product managers, and
+              other engineers.
+            </p>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item">
+              <p class="timeline-period">2024 - Present</p>
+              <h3>Software Development Engineer</h3>
+              <p>
+                Building full-stack product features, improving application
+                performance, and contributing to code quality through reviews,
+                refactors, and reusable components.
+              </p>
+            </article>
+            <article class="timeline-item">
+              <p class="timeline-period">2023 - 2024</p>
+              <h3>Software Engineer</h3>
+              <p>
+                Worked on internal tools and customer-facing workflows, partnering
+                across teams to ship faster and reduce operational friction.
+              </p>
+            </article>
+            <article class="timeline-item">
+              <p class="timeline-period">Core strengths</p>
+              <h3>What I bring</h3>
+              <p>
+                Strong ownership, solid debugging instincts, clean implementation,
+                and a bias toward practical solutions that balance speed with
+                maintainability.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
       <section id="about" class="section about">
         <div class="container reveal">
-          <p class="meta">About</p>
-          <h2>Say Hi</h2>
+          <p class="meta">About / Contact</p>
+          <h2>Software engineer focused on product, systems, and execution.</h2>
           <p>
-            A visual-first portfolio starter inspired by editorial layouts. The
-            entire site runs on plain HTML, CSS, and JavaScript, so you can
-            customize sections quickly without a framework.
+            I enjoy translating messy requirements into clear software, whether
+            that means building polished interfaces, shaping APIs, or improving
+            the workflows that teams rely on every day. I’m currently looking to
+            keep growing as an SDE through meaningful product and platform work.
           </p>
           <div class="links">
+            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer"
+              >LinkedIn</a
+            >
+            <a href="https://github.com" target="_blank" rel="noreferrer"
+              >GitHub</a
+            >
+            <a href="mailto:dakshitha@example.com">Email</a>
+            <a href="#" aria-label="Open your resume PDF">Resume</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container garden-footer">
+        <div class="garden-copy reveal">
+          <p class="garden-quote">
+            Design with patience,<br />
+            grow with intention.
+          </p>
+          <p class="garden-signoff">Made with care and lots of coffee.</p>
+        </div>
+
+        <div class="garden-links reveal">
+          <div class="garden-column">
+            <p class="garden-heading">Say Hi</p>
             <a href="https://www.linkedin.com" target="_blank" rel="noreferrer"
               >LinkedIn</a
             >
@@ -74,55 +254,19 @@
             >
             <a href="#" aria-label="Open your resume PDF">Resume</a>
           </div>
-        </div>
-      </section>
-    </main>
-
-    <section class="garden-section">
-  <div class="garden-overlay">
-    <div class="garden-top">
-      <div class="garden-quote">
-        <p>To plant a garden, is to believe in the future.</p>
-        <span>MADE WITH &lt;3 AND LOTS OF COFFEE</span>
-      </div>
-
-      <div class="garden-links">
-        <div>
-          <h4>SAY HI</h4>
-          <a href="#">LINKEDIN</a>
-          <a href="#">TWITTER</a>
-          <a href="#">RESUME</a>
+          <div class="garden-column">
+            <p class="garden-heading">Page</p>
+            <a href="#home">Home</a>
+            <a href="#stack">Stack</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+          </div>
         </div>
 
-        <div>
-          <h4>PAGE</h4>
-          <a href="#home">HOME</a>
-          <a href="#projects">PLAYGROUND</a>
-          <a href="#about">ABOUT</a>
+        <div class="garden-field reveal">
+          <p class="garden-instruction">Click anywhere in the field to water it.</p>
+          <div id="garden-bed" class="garden-bed"></div>
         </div>
-      </div>
-    </div>
-
-    <div class="ascii-garden">
-      <span>(*)</span>
-      <span>\|/</span>
-      <span>^^^</span>
-      <span>{_}</span>
-      <span>Y</span>
-      <span>\|/</span>
-      <span>(__)</span>
-      <span>^^^</span>
-      <span>u</span>
-      <span>\|/</span>
-      <span>(*)</span>
-      <span>^^^</span>
-    </div>
-  </div>
-</section>
-
-    <footer class="site-footer">
-      <div class="container">
-        <p>Made with care and lots of coffee.</p>
       </div>
     </footer>
 
