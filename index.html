@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio website starter inspired by editorial and playful design."
+      content="Dakshitha K is a Full-stack engineer focused on distributed systems, data platforms, and AI-native developer tooling. 2+ years at Maersk."
     />
     <script>
       const savedTheme = localStorage.getItem("theme");
       const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       const initialTheme = savedTheme ?? (systemPrefersDark ? "dark" : "light");
       document.documentElement.dataset.theme = initialTheme;
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
     </script>
     <title>Dakshitha K Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,22 +25,46 @@
     />
     <link
       rel="icon"
-      href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🌻</text></svg>'
+      href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💛</text></svg>'
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
+  <body class="intro-active">
+    <div class="intro" aria-hidden="true">
+      <div class="leaves">
+        <span class="leaf leaf-1"></span>
+        <span class="leaf leaf-2"></span>
+        <span class="leaf leaf-3"></span>
+        <span class="leaf leaf-4"></span>
+        <span class="leaf leaf-5"></span>
+        <span class="leaf leaf-6"></span>
+        <span class="leaf leaf-7"></span>
+        <span class="leaf leaf-8"></span>
+        <span class="leaf leaf-9"></span>
+      </div>
+      <span class="intro-name">
+        <span class="intro-letter">d</span>
+        <span class="intro-letter">a</span>
+        <span class="intro-letter">k</span>
+        <span class="intro-letter">s</span>
+        <span class="intro-letter">h</span>
+        <span class="intro-letter">i</span>
+        <span class="intro-letter">t</span>
+        <span class="intro-letter">h</span>
+        <span class="intro-letter">a</span>
+      </span>
+    </div>
     <div class="custom-cursor" aria-hidden="true"></div>
     <header class="site-header">
       <div class="container header-row">
         <a class="brand" href="#home">Dakshitha K</a>
         <div class="header-actions">
-          <nav class="site-nav" aria-label="Primary">
-            <a href="#home" data-nav-link>home</a>
-            <a href="#stack" data-nav-link>stack</a>
-            <a href="#projects" data-nav-link>projects</a>
-            <a href="#experience" data-nav-link>experience</a>
-            <a href="#about" data-nav-link>contact</a>
+          <nav class="site-nav" id="site-nav" aria-label="Primary">
+            <a href="#home" data-nav-link>Home</a>
+            <a href="#stack" data-nav-link>Stack</a>
+            <a href="#projects" data-nav-link>Projects</a>
+            <a href="#experience" data-nav-link>Experience</a>
+            <a href="#about" data-nav-link>Contact</a>
           </nav>
           <label class="mechanical-toggle" aria-label="Toggle light and dark theme">
             <input id="theme-toggle" type="checkbox" />
@@ -49,6 +75,17 @@
               </div>
             </div>
           </label>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="Open menu"
+          >
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </button>
         </div>
       </div>
     </header>
@@ -101,53 +138,85 @@
           </div>
           <article class="note note-main">
             <p>
-              Dakshitha is a software engineer with 2.5 years of experience
-              building reliable product features, internal tools, and user-facing
-              web experiences.
+              Dakshitha is a full-stack engineer with 2+ years building
+              distributed systems and operational excellence, shipping features
+              faster through AI-native workflows.
             </p>
           </article>
           <article class="note note-side">
             <p>
-              Currently focused on full-stack development, clean architecture,
-              performance, and shipping practical products that scale.
+              Driven by a simple obsession: Customer problems, solved at scale.
             </p>
           </article>
           <article class="note note-tag" aria-hidden="true">
-            <p>2.5 yrs</p>
+            <p>2+<br />YOE</p>
           </article>
           <article class="note note-icon" aria-hidden="true">
-            <p>dev<br />api<br />ui</p>
+            <pre class="bloom bloom-a"><span class="bloom-head">(*)</span>
+,(| ,
+\|/</pre>
+            <pre class="bloom bloom-b"><span class="bloom-head">((*))</span>
+~.\ | /.~
+\(|)~
+\|/</pre>
           </article>
         </div>
       </section>
 
       <section id="stack" class="section stack">
         <div class="container reveal">
-          <p class="meta">Tech Stack</p>
+          <p class="meta">Engineering toolkit for distributed systems and AI-native work.</p>
           <div class="section-heading">
-            <h2>Engineering toolkit built for product delivery.</h2>
+            <h2>Tech Stack</h2>
             <p class="section-copy">
-              I work across frontend, backend, databases, and developer tooling,
-              with a focus on readable code, maintainable systems, and thoughtful
-              execution.
+              I work across backend services, data platforms, developer tooling,
+              and AI integrations, with a focus on reliability, throughput, and
+              shipping fast without compromising quality.
             </p>
           </div>
-          <div class="stack-grid">
-            <article class="stack-card">
-              <p class="stack-title">Frontend</p>
-              <p>JavaScript, TypeScript, React, Next.js, HTML, CSS</p>
+          <div class="stack-rows">
+            <article class="stack-row">
+              <p class="stack-title">Languages &amp; Frameworks</p>
+              <ul class="stack-pills">
+                <li class="stack-pill">Java</li>
+                <li class="stack-pill">Python</li>
+                <li class="stack-pill">Spring Boot</li>
+                <li class="stack-pill">React.js</li>
+              </ul>
             </article>
-            <article class="stack-card">
-              <p class="stack-title">Backend</p>
-              <p>Node.js, Express, REST APIs, authentication, integrations</p>
+            <article class="stack-row">
+              <p class="stack-title">Backend &amp; Data</p>
+              <ul class="stack-pills">
+                <li class="stack-pill">PostgreSQL</li>
+                <li class="stack-pill">MySQL</li>
+                <li class="stack-pill">Redis</li>
+                <li class="stack-pill">Kafka</li>
+                <li class="stack-pill">Kubernetes</li>
+                <li class="stack-pill">REST APIs</li>
+              </ul>
             </article>
-            <article class="stack-card">
-              <p class="stack-title">Data</p>
-              <p>PostgreSQL, MongoDB, schema design, query tuning</p>
+            <article class="stack-row">
+              <p class="stack-title">Tools &amp; Testing</p>
+              <ul class="stack-pills">
+                <li class="stack-pill">Grafana</li>
+                <li class="stack-pill">SonarQube</li>
+                <li class="stack-pill">Docker</li>
+                <li class="stack-pill">Git</li>
+                <li class="stack-pill">Postman</li>
+                <li class="stack-pill">JUnit</li>
+                <li class="stack-pill">Mockito</li>
+              </ul>
             </article>
-            <article class="stack-card">
-              <p class="stack-title">Workflow</p>
-              <p>Git, debugging, code reviews, CI/CD, testing, deployment</p>
+            <article class="stack-row">
+              <p class="stack-title">AI / ML</p>
+              <ul class="stack-pills">
+                <li class="stack-pill">LLM integration</li>
+                <li class="stack-pill">RAG</li>
+                <li class="stack-pill">Agentic systems</li>
+                <li class="stack-pill">Fine-tuning</li>
+                <li class="stack-pill">MCP</li>
+                <li class="stack-pill">Context engineering</li>
+              </ul>
             </article>
           </div>
         </div>
@@ -155,12 +224,13 @@
 
       <section id="projects" class="section projects">
         <div class="container reveal">
-          <p class="meta">Projects</p>
+          <p class="meta">Selected engineering work.</p>
           <div class="section-heading">
-            <h2>Selected software work.</h2>
+            <h2>Projects</h2>
             <p class="section-copy">
-              A mix of shipped features, product thinking, and engineering work
-              across interfaces, APIs, and systems.
+              A mix of side projects and production systems, across AI tooling,
+              data platforms, and incident response, built end-to-end with a
+              focus on reliability and developer leverage.
             </p>
           </div>
           <div id="project-list" class="project-list" aria-live="polite"></div>
@@ -169,42 +239,95 @@
 
       <section id="experience" class="section experience">
         <div class="container reveal">
-          <p class="meta">Experience</p>
+          <p class="meta">Experience &amp; education</p>
           <div class="section-heading">
-            <h2>2.5 years building software in production environments.</h2>
+            <h2>The path so far.</h2>
             <p class="section-copy">
-              My work spans feature delivery, platform improvements, debugging,
-              and collaborating closely with designers, product managers, and
-              other engineers.
+              Worked across data platform reliability, cost optimization, AI
+              tooling, and incident response.
             </p>
           </div>
-          <div class="timeline">
-            <article class="timeline-item">
-              <p class="timeline-period">2024 - Present</p>
-              <h3>Software Development Engineer</h3>
-              <p>
-                Building full-stack product features, improving application
-                performance, and contributing to code quality through reviews,
-                refactors, and reusable components.
-              </p>
-            </article>
-            <article class="timeline-item">
-              <p class="timeline-period">2023 - 2024</p>
-              <h3>Software Engineer</h3>
-              <p>
-                Worked on internal tools and customer-facing workflows, partnering
-                across teams to ship faster and reduce operational friction.
-              </p>
-            </article>
-            <article class="timeline-item">
-              <p class="timeline-period">Core strengths</p>
-              <h3>What I bring</h3>
-              <p>
-                Strong ownership, solid debugging instincts, clean implementation,
-                and a bias toward practical solutions that balance speed with
-                maintainability.
-              </p>
-            </article>
+          <div class="career-timeline">
+            <div class="timeline-tracks">
+              <div class="timeline-track">
+                <button class="timeline-circle" type="button" data-step="0" aria-pressed="false">
+                  <span class="timeline-label">RVCE</span>
+                </button>
+                <span class="timeline-arrow" aria-hidden="true"></span>
+                <button class="timeline-circle" type="button" data-step="1" aria-pressed="false">
+                  <span class="timeline-label">IISc</span>
+                </button>
+                <span class="timeline-arrow" aria-hidden="true"></span>
+                <button class="timeline-circle" type="button" data-step="2" aria-pressed="false">
+                  <span class="timeline-label">Maersk<br />Intern</span>
+                </button>
+                <span class="timeline-arrow" aria-hidden="true"></span>
+                <button class="timeline-circle" type="button" data-step="3" aria-pressed="false">
+                  <span class="timeline-label">Maersk<br />SDE</span>
+                </button>
+              </div>
+              <div class="timeline-dates" aria-hidden="true">
+                <span>2020 - 2024</span>
+                <span></span>
+                <span>Sep 2023 - Feb 2024</span>
+                <span></span>
+                <span>Mar - Sep 2024</span>
+                <span></span>
+                <span>Oct 2024 - Now</span>
+              </div>
+            </div>
+            <div class="timeline-panel">
+              <article class="timeline-detail" data-step="0">
+                <p class="step-period">2020 - 2024</p>
+                <h3 class="step-role">B.E at R V College of Engineering</h3>
+                <p class="step-place">Electronics &amp; Communication·. Bangalore</p>
+                <div class="step-body">
+                  <p class="step-grade"><strong>CGPA 8.18 / 10</strong></p>
+                  <p class="step-subheading">Roles &amp; communities</p>
+                  <ul>
+                    <li><strong>Student Placement Coordinator</strong> - helped coordinate campus recruitment and connect students with hiring teams.</li>
+                    <li><strong>CARV Access</strong> - member of the campus cinematography group; produced and edited short-form content for college events.</li>
+                    <li><strong>Rotaract Club</strong> - volunteer and member; participated in community service drives and student initiatives.</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="timeline-detail" data-step="1">
+                <p class="step-period">Sep 2023 - Feb 2024</p>
+                <h3 class="step-role">Research Assistant Intern</h3>
+                <p class="step-place">Indian Institute of Science · Bangalore</p>
+                <div class="step-body">
+                  <ul>
+                    <li>Implemented an <strong>AES encryption layer for ADS-B aviation data</strong>, keeping system overhead within 5% across 50+ validation scenarios.</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="timeline-detail" data-step="2">
+                <p class="step-period">Mar - Sep 2024</p>
+                <h3 class="step-role">Software Engineer Intern</h3>
+                <p class="step-place">A.P. Moller – Maersk · Bangalore</p>
+                <div class="step-body">
+                  <ul>
+                    <li>Built a tracking dashboard with <strong>10+ REST APIs</strong> that eliminated 90% of direct database queries and cut debugging time by 60% per incident, with improved data security through controlled API access.</li>
+                    <li>Refactored legacy code across <strong>10+ microservices</strong>, resolved 300+ SonarQube smells, and reached <strong>95% unit-test coverage</strong>.</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="timeline-detail" data-step="3">
+                <p class="step-period">Oct 2024 - Present</p>
+                <h3 class="step-role">Associate Software Engineer</h3>
+                <p class="step-place">A.P. Moller – Maersk · Bangalore</p>
+                <div class="step-body">
+                  <ul>
+                    <li>Cut Kubernetes infrastructure cost by <strong>23%</strong> - analyzed resource over-provisioning across data platform services for <strong>$48K+ annual savings</strong> ($577/day → $446/day).</li>
+                    <li>Received a <strong>SPOT Award</strong> for resolving a production memory leak with a <strong>300K+ message backlog</strong>; restored processing in 2.5 hours with zero data loss.</li>
+                    <li>Built a <strong>RAG developer assistant</strong> (OpenAI LLM + ChromaDB) over 50K+ lines of legacy data-platform code, cutting new-engineer ramp-up time.</li>
+                    <li>Reduced container-tracking <strong>MTTR by ~67%</strong> (~30 min → under 10 min) via 10+ structured triage slash commands automating the full SNOW-to-RCA pipeline across 17 production databases.</li>
+                    <li>Built a location enrichment service processing <strong>2M+ daily records</strong>, reducing data loss by 15% and unlocking real-time tracking for 10K+ shipments.</li>
+                    <li>Onboarded <strong>Gnosis and OpenTech</strong> data providers, enabling 10K+ daily shipment updates.</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -212,21 +335,22 @@
       <section id="about" class="section about">
         <div class="container reveal">
           <p class="meta">About / Contact</p>
-          <h2>Software engineer focused on product, systems, and execution.</h2>
+          <h2>Full-stack engineer focused on distributed systems and AI-native delivery.</h2>
           <p>
-            I enjoy translating messy requirements into clear software, whether
-            that means building polished interfaces, shaping APIs, or improving
-            the workflows that teams rely on every day. I’m currently looking to
-            keep growing as an SDE through meaningful product and platform work.
+            I enjoy translating messy operational problems into reliable
+            software, whether that's cutting infra cost, building RAG-based
+            developer tooling, or shaping data pipelines that keep up with
+            production scale. Open to product and platform engineering roles
+            where I can own systems end-to-end.
           </p>
           <div class="links">
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer"
+            <a href="https://www.linkedin.com/in/dakshitha-k/" target="_blank" rel="noreferrer"
               >LinkedIn</a
             >
-            <a href="https://github.com" target="_blank" rel="noreferrer"
+            <a href="https://github.com/DakshithaK" target="_blank" rel="noreferrer"
               >GitHub</a
             >
-            <a href="mailto:dakshitha@example.com">Email</a>
+            <a href="mailto:dakshithakrishnagowda@gmail.com">Email</a>
             <a href="#" aria-label="Open your resume PDF">Resume</a>
           </div>
         </div>
@@ -234,38 +358,53 @@
     </main>
 
     <footer class="site-footer" id="contact">
-      <div class="container garden-footer">
-        <div class="garden-copy reveal">
-          <p class="garden-quote">
-            Design with patience,<br />
-            grow with intention.
-          </p>
-          <p class="garden-signoff">Made with care and lots of coffee.</p>
+      <div class="container garden-footer reveal">
+        <div class="garden-header">
+          <div class="garden-copy">
+            <p class="garden-kicker">Let’s build something that grows.</p>
+            <h2 class="garden-title">
+              Full-stack engineer working at the intersection of distributed
+              systems, data platforms, and AI-native tooling.
+            </h2>
+            <p class="garden-body"> 
+              Open to full-stack,
+              platform, and AI engineering roles where I can own services
+              end-to-end and keep shipping impact.
+            </p>
+          </div>
+          <aside class="garden-panel">
+            <p class="garden-panel-label">Quick facts</p>
+            <div class="garden-facts">
+              <article class="garden-fact">
+                <span>Experience</span>
+                <strong>2+ years</strong>
+              </article>
+              <article class="garden-fact">
+                <span>Focus</span>
+                <strong>Distributed systems + AI tooling</strong>
+              </article>
+              <article class="garden-fact">
+                <span>Stack</span>
+                <strong>Java, Spring Boot, React, Kafka, K8s</strong>
+              </article>
+              <article class="garden-fact">
+                <span>Status</span>
+                <strong>Open to opportunities</strong>
+              </article>
+            </div>
+          </aside>
         </div>
-
-        <div class="garden-links reveal">
-          <div class="garden-column">
-            <p class="garden-heading">Say Hi</p>
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer"
-              >LinkedIn</a
-            >
-            <a href="https://twitter.com" target="_blank" rel="noreferrer"
-              >Twitter</a
-            >
+        <div class="garden-field">
+          <p class="garden-instruction">Click anywhere in the field to water it.</p>
+          <div id="garden-bed" class="garden-bed" aria-hidden="true"></div>
+        </div>
+        <div class="garden-links">
+          <div class="footer-links">
+            <a href="https://www.linkedin.com/in/dakshitha-k/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/DakshithaK" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="mailto:dakshithakrishnagowda@gmail.com">Email</a>
             <a href="#" aria-label="Open your resume PDF">Resume</a>
           </div>
-          <div class="garden-column">
-            <p class="garden-heading">Page</p>
-            <a href="#home">Home</a>
-            <a href="#stack">Stack</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-          </div>
-        </div>
-
-        <div class="garden-field reveal">
-          <p class="garden-instruction">Click anywhere in the field to water it.</p>
-          <div id="garden-bed" class="garden-bed"></div>
         </div>
       </div>
     </footer>
