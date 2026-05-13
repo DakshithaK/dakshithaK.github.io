@@ -1,39 +1,47 @@
 const projects = [
   {
-    type: "Full stack",
-    date: "Recent work",
-    title: "Internal Ops Dashboard",
+    type: "AI · Distributed systems",
+    date: "Side project",
+    title: "Contractor Performance Scoring Engine",
     description:
-      "Built a dashboard for operational workflows with role-based access, reusable UI modules, and backend integrations that reduced manual coordination.",
-    link: "#",
+      "6-service AI risk platform integrating Claude Vision into a Kafka-driven weighted scoring pipeline with Redis-cached Hire / Caution / Avoid verdicts. Sub-12ms p95 at 3,000+ req/s under concurrent load. Java, Spring Boot 3, FastAPI, React, Docker, K8s.",
+    link: "https://github.com/DakshithaK",
     thumbClass: "thumb-orange",
+    image: "./images/contractor-engine.png",
+    imageAlt: "Contractor Performance Scoring Engine",
   },
   {
-    type: "Backend",
-    date: "Production systems",
-    title: "API and Workflow Automation",
+    type: "Developer tooling",
+    date: "Production · Maersk",
+    title: "RAG-Based Developer Assistant",
     description:
-      "Designed and integrated service APIs, improved request handling, and supported workflow automation for faster delivery across teams.",
+      "Internal assistant over 50K+ lines of legacy data-platform code using an OpenAI LLM + ChromaDB retrieval layer — cut new-engineer ramp-up time and made tribal knowledge searchable.",
     link: "#",
     thumbClass: "thumb-teal",
+    image: "./images/rag-assistant.png",
+    imageAlt: "RAG-based developer assistant",
   },
   {
-    type: "Frontend",
-    date: "Performance focus",
-    title: "User-Facing Web Experience",
+    type: "Incident response",
+    date: "Production · Maersk",
+    title: "Structured Triage Slash Commands",
     description:
-      "Implemented responsive interfaces, polished interaction states, and improved performance on core journeys with an emphasis on maintainable components.",
+      "10+ investigation slash commands that automate the full triage-to-RCA pipeline from SNOW ticket to fault pinpointed across 17 production databases — reducing container-tracking MTTR by ~67% (~30 min → under 10 min).",
     link: "#",
     thumbClass: "thumb-lilac",
+    image: "./images/triage-commands.png",
+    imageAlt: "Structured triage slash commands",
   },
   {
-    type: "Engineering",
-    date: "Collaboration",
-    title: "Code Quality and Delivery",
+    type: "Data platform",
+    date: "Production · Maersk",
+    title: "Location Enrichment Service",
     description:
-      "Contributed through debugging, refactors, peer reviews, and release support to keep projects stable while shipping new capabilities.",
+      "Service that enriches and normalizes shipment location data at 2M+ records per day, reduced data loss by 15%, and unlocked real-time tracking for 10K+ shipments via Gnosis and OpenTech data providers.",
     link: "#",
     thumbClass: "thumb-violet",
+    image: "./images/location-service.png",
+    imageAlt: "Location enrichment service",
   },
 ];
 
@@ -90,15 +98,15 @@ const gardenBlooms = [
   },
   { art: ["\\\\ /", " | ", "vvv"], className: "sprout-lime", x: 56, y: 63, stage: 2 },
   {
-    art: ["@@@@", "( )", "\\|/", "^^^^"],
+    art: ["****", "( )", "\\|/", "^^^^"],
     className: "sprout-orange",
     x: 64,
     y: 74,
     stage: 0,
     stages: [
       ["uuu", "( )", "\\|/", "^^^"],
-      ["@@@@@", "(   )", "\\|/", "^^^^"],
-      ["@@@@@", "(   )", "~Y~", " | ", "\\|/", "^^^^^"],
+      ["*****", "(   )", "\\|/", "^^^^"],
+      ["*****", "(   )", "~Y~", " | ", "\\|/", "^^^^^"],
     ],
   },
   {
@@ -113,7 +121,7 @@ const gardenBlooms = [
       ["u", "Y", "^^^^^"],
     ],
   },
-  { art: ["..", "vv", "^^"], className: "sprout-pink", x: 84, y: 51, stage: 1 },
+  { art: ["...", "\|/", "^^"], className: "sprout-pink", x: 84, y: 51, stage: 1 },
   {
     art: ["(*)", ">/"],
     className: "sprout-cream",
@@ -122,8 +130,8 @@ const gardenBlooms = [
     stage: 0,
     stages: [
       ["(*)"],
-      ["(*)", ">|"],
-      ["(*)", ">/"],
+      ["(*)", " | "],
+      ["(*)", "|"],
     ],
   },
   {
@@ -140,20 +148,20 @@ const gardenBlooms = [
   },
   { art: [".", "| |", "vv"], className: "sprout-lime", x: 9, y: 58, stage: 2 },
   {
-    art: ["@", "\\|/", "^^^"],
+    art: ["*****", "\\|/", "^^^"],
     className: "sprout-pink",
     x: 58,
     y: 92,
     stage: 0,
     stages: [
-      ["@", "|", "^^"],
-      ["@", "\\|/", "^^^"],
-      ["@", "\\|/", "^^^^"],
+      ["**", "|", "^^"],
+      ["**", "\\|/", "^^^"],
+      ["**", "\\|/", "^^^^"],
     ],
   },
   { art: ["\\|/", "^^^^^"], className: "sprout-sky", x: 44, y: 90, stage: 2 },
   {
-    art: ["(*)", ">|"],
+    art: ["(*)", "|"],
     className: "sprout-cream",
     x: 86,
     y: 79,
@@ -161,7 +169,7 @@ const gardenBlooms = [
     stages: [
       ["(*)"],
       ["(*)", " | "],
-      ["(*)", ">|"],
+      ["(*)", "|"],
     ],
   },
   { art: ["` `", "\\|/", "^^^"], className: "sprout-lime", x: 7, y: 84, stage: 2 },
@@ -180,15 +188,15 @@ const gardenBlooms = [
   },
   { art: ["\\\\ /", " | ", "vvv"], className: "sprout-lime", x: 31, y: 72, stage: 2 },
   {
-    art: ["@", "\\|/", "^^^"],
+    art: ["*****", "\\|/", "^^^"],
     className: "sprout-pink",
     x: 37,
     y: 95,
     stage: 1,
     stages: [
-      ["@", "|", "^^"],
-      ["@", "\\|/", "^^^"],
-      ["@", "\\|/", "^^^^"],
+      ["*****", "|", "^^"],
+      ["*****", "\\|/", "^^^"],
+      ["*****", "\\|/", "^^^^"],
     ],
   },
   {
@@ -204,7 +212,7 @@ const gardenBlooms = [
     ],
   },
   { art: ["u", "Y", "^^^^^"], className: "sprout-sky", x: 49, y: 41, stage: 2 },
-  { art: ["..", "vv", "^^"], className: "sprout-pink", x: 54, y: 83, stage: 1 },
+  { art: ["...", "\|/", "^^"], className: "sprout-pink", x: 54, y: 83, stage: 1 },
   {
     art: ["uuu", "( )", "^^^^^"],
     className: "sprout-pink",
@@ -219,15 +227,15 @@ const gardenBlooms = [
   },
   { art: ["\\|/", "^^^^^"], className: "sprout-sky", x: 68, y: 90, stage: 2 },
   {
-    art: ["(*)", ">/"],
+    art: ["(*)", "|"],
     className: "sprout-cream",
     x: 71,
     y: 66,
     stage: 1,
     stages: [
       ["(*)"],
-      ["(*)", ">|"],
-      ["(*)", ">/"],
+      ["(*)", " | "],
+      ["(*)", "|"],
     ],
   },
   { art: ["` `", "\\|/", "^^^"], className: "sprout-lime", x: 77, y: 78, stage: 2 },
@@ -244,24 +252,34 @@ const gardenBlooms = [
     ],
   },
   { art: ["u", "Y", "^^^^^"], className: "sprout-sky", x: 89, y: 46, stage: 2 },
-  { art: [".", "| |", "vv"], className: "sprout-lime", x: 93, y: 88, stage: 2 },
+  { art: [".", "| |", "\|/"], className: "sprout-lime", x: 93, y: 88, stage: 2 },
   {
-    art: ["@@@@", "( )", "\\|/", "^^^^"],
+    art: ["*****", "( )", "\\|/", "^^^^"],
     className: "sprout-orange",
     x: 98,
     y: 67,
     stage: 1,
     stages: [
       ["uuu", "( )", "\\|/", "^^^"],
-      ["@@@@@", "(   )", "\\|/", "^^^^"],
-      ["@@@@@", "(   )", "~Y~", " | ", "\\|/", "^^^^^"],
+      ["*****", "(   )", "\\|/", "^^^^"],
+      ["*****", "(   )", "~Y~", " | ", "\\|/", "^^^^^"],
     ],
   },
+  { art: ["(*)", "\|/"], className: "sprout-cream", x: 5, y: 18, stage: 2 },
+  { art: [".", "."], className: "sprout-pink", x: 16, y: 8, stage: 1 },
+  { art: ["u", "Y", "^^^^^"], className: "sprout-sky", x: 24, y: 28, stage: 2 },
+  { art: ["^^^"], className: "sprout-lime", x: 32, y: 14, stage: 2 },
+  { art: ["~Y~", "\\|/", "^^^"], className: "sprout-pink", x: 45, y: 12, stage: 2 },
+  { art: ["(*)", " \|/ "], className: "sprout-cream", x: 52, y: 6, stage: 1 },
+  { art: ["uuu", "(_)", "\\|/", "^^^"], className: "sprout-orange", x: 62, y: 28, stage: 2 },
+  { art: [".", "."], className: "sprout-pink", x: 72, y: 12, stage: 1 },
+  { art: ["wwwww", "(   )", "~Y~", "\\|/", "^^^^^"], className: "sprout-pink", x: 82, y: 22, stage: 2 },
+  { art: ["(*)", "\|/"], className: "sprout-cream", x: 95, y: 18, stage: 2 },
 ];
 
-const grownSprouts = [];
 const THEME_STORAGE_KEY = "theme";
 const STARFIELD_HEIGHT = 2000;
+const grownSprouts = [];
 
 function applyTheme(theme) {
   document.documentElement.dataset.theme = theme;
@@ -333,8 +351,14 @@ function createProjectCard(project) {
   const article = document.createElement("article");
   article.className = "project-card reveal";
 
+  const thumb = project.image
+    ? `<div class="project-thumb ${project.thumbClass}">
+         <img src="${project.image}" alt="${project.imageAlt ?? project.title}" loading="lazy" />
+       </div>`
+    : `<div class="project-thumb ${project.thumbClass}" aria-hidden="true"></div>`;
+
   article.innerHTML = `
-    <div class="project-thumb ${project.thumbClass}" aria-hidden="true"></div>
+    ${thumb}
     <div class="project-topline">
       <span>${project.type}</span>
       <span>-</span>
@@ -372,7 +396,6 @@ function renderGarden() {
     flower.dataset.y = `${bloom.y}`;
     flower.dataset.stage = "0";
     const stageArt = bloom.stages ?? [bloom.art];
-    flower.dataset.maxStage = `${stageArt.length - 1}`;
     flower.textContent = stageArt[0].join("\n");
     flower.style.left = `${bloom.x}%`;
     flower.style.top = `${bloom.y}%`;
@@ -408,8 +431,7 @@ function growNearbySprouts(originX, originY) {
     }
 
     const currentStage = Number(sprout.dataset.stage);
-    const growthBoost = distance < 8 ? 1 : 1;
-    setSproutStage(sprout, currentStage + growthBoost);
+    setSproutStage(sprout, currentStage + 1);
   });
 }
 
@@ -541,10 +563,10 @@ function setupNoteTilt() {
       const rect = note.getBoundingClientRect();
       const ratioX = (event.clientX - rect.left) / rect.width - 0.5;
       const ratioY = (event.clientY - rect.top) / rect.height - 0.5;
-      const tiltY = ratioX * 11;
-      const tiltX = -ratioY * 9;
-      const shiftX = ratioX * 8;
-      const shiftY = ratioY * 8;
+      const tiltY = ratioX * 22;
+      const tiltX = -ratioY * 18;
+      const shiftX = ratioX * 18;
+      const shiftY = ratioY * 18;
 
       note.style.setProperty("--tilt-x", `${tiltX.toFixed(2)}deg`);
       note.style.setProperty("--tilt-y", `${tiltY.toFixed(2)}deg`);
@@ -600,12 +622,99 @@ function setupProjectCardTilt() {
   });
 }
 
+function setupCareerTimeline() {
+  const timeline = document.querySelector(".career-timeline");
+  if (!timeline) return;
+  const circles = [...timeline.querySelectorAll(".timeline-circle")];
+  const details = [...timeline.querySelectorAll(".timeline-detail")];
+  if (!circles.length || !details.length) return;
+
+  const activate = (index) => {
+    circles.forEach((circle, i) => {
+      const isActive = i === index;
+      circle.classList.toggle("active", isActive);
+      circle.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+    details.forEach((detail, i) => {
+      detail.classList.toggle("active", i === index);
+    });
+  };
+
+  circles.forEach((circle, i) => {
+    circle.addEventListener("click", () => activate(i));
+  });
+
+  activate(circles.length - 1);
+}
+
+function setupNavToggle() {
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".site-nav");
+  if (!toggle || !nav) return;
+
+  const closeNav = () => {
+    if (!document.body.classList.contains("nav-open")) return;
+    document.body.classList.remove("nav-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open menu");
+  };
+
+  const openNav = () => {
+    document.body.classList.add("nav-open");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Close menu");
+  };
+
+  toggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    document.body.classList.contains("nav-open") ? closeNav() : openNav();
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeNav);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeNav();
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!document.body.classList.contains("nav-open")) return;
+    if (nav.contains(event.target) || toggle.contains(event.target)) return;
+    closeNav();
+  });
+
+  window.matchMedia("(min-width: 769px)").addEventListener("change", (event) => {
+    if (event.matches) closeNav();
+  });
+}
+
+function setupIntroAnimation() {
+  const intro = document.querySelector(".intro");
+  if (!intro) return;
+  window.scrollTo(0, 0);
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reducedMotion) {
+    document.body.classList.remove("intro-active");
+    intro.remove();
+    return;
+  }
+  intro.addEventListener("animationend", (event) => {
+    if (event.animationName !== "intro-exit") return;
+    document.body.classList.remove("intro-active");
+    intro.remove();
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  setupIntroAnimation();
+  setupNavToggle();
   setupThemeToggle();
   setupStarfield();
   renderProjects();
   renderGarden();
   setupGardenInteraction();
+  setupCareerTimeline();
   setupActiveNav();
   setupRevealAnimations();
   setupCustomCursor();
