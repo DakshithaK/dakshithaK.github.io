@@ -318,7 +318,6 @@ function setupThemeToggle() {
   toggle.addEventListener("change", () => {
     const nextTheme = toggle.checked ? "dark" : "light";
     applyTheme(nextTheme);
-    localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
   });
 }
 
