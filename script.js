@@ -5,43 +5,58 @@ const projects = [
     title: "Contractor Performance Scoring Engine",
     description:
       "6-service AI risk platform integrating Claude Vision into a Kafka-driven weighted scoring pipeline with Redis-cached Hire / Caution / Avoid verdicts. Sub-12ms p95 at 3,000+ req/s under concurrent load. Java, Spring Boot 3, FastAPI, React, Docker, K8s.",
-    link: "https://github.com/DakshithaK",
+    link: "https://github.com/DakshithaK/contractor_performance_scoring_engine",
     thumbClass: "thumb-orange",
-    image: "./images/contractor-engine.png",
+    images: [
+      "./images/ContractorIQ_Home.png",
+      "./images/ContractorIQLog.png",
+    ],
     imageAlt: "Contractor Performance Scoring Engine",
   },
   {
-    type: "Developer tooling",
-    date: "Production · Maersk",
-    title: "RAG-Based Developer Assistant",
+    type: "AI · Developer tooling",
+    date: "Side project",
+    title: "RAG-Based Logs Analyser",
     description:
-      "Internal assistant over 50K+ lines of legacy data-platform code using an OpenAI LLM + ChromaDB retrieval layer — cut new-engineer ramp-up time and made tribal knowledge searchable.",
-    link: "#",
-    thumbClass: "thumb-teal",
-    image: "./images/rag-assistant.png",
-    imageAlt: "RAG-based developer assistant",
+      "Privacy-preserving RCA assistant for service logs: local RAG pipeline (LangChain, ChromaDB, Ollama/Gemma, sentence-transformer embeddings) augmented with Drain3 template clustering and Isolation Forest anomaly scoring. 70% RCA accuracy on a 30-incident eval set, sub-2s p95 latency under concurrent load.",
+    link: "https://github.com/DakshithaK/AI-Log-Analyser",
+    thumbClass: "thumb-black",
+    images: [
+      "./images/RAG1.png",
+      "./images/RAG2.png",
+    ],
+    imageAlt: "RAG-based logs analyser",
   },
   {
-    type: "Incident response",
-    date: "Production · Maersk",
-    title: "Structured Triage Slash Commands",
+    type: "Quant finance",
+    date: "Side project",
+    title: "Quantitative Finance- Pairs Trading",
     description:
-      "10+ investigation slash commands that automate the full triage-to-RCA pipeline from SNOW ticket to fault pinpointed across 17 production databases — reducing container-tracking MTTR by ~67% (~30 min → under 10 min).",
-    link: "#",
-    thumbClass: "thumb-lilac",
-    image: "./images/triage-commands.png",
-    imageAlt: "Structured triage slash commands",
+      "Market-neutral statistical arbitrage system in Python for NSE-listed banking equities (Axis Bank & ICICI Bank). Engle-Granger cointegration testing, 30-day rolling Z-score signal generation (entry at ±2σ, exit at ±0.5σ), and end-to-end backtesting across 250 trading days- eliminating systematic market exposure while capturing mean-reversion alpha on correlated spread deviations.",
+    link: "https://github.com/DakshithaK/Quantitative-Finance",
+    thumbClass: "thumb-emerald",
+    images: [
+      "./images/Quant/equity_curve.png",
+      "./images/Quant/zscore.png",
+      "./images/Quant/regression_train.png",
+      "./images/Quant/regression_test.png",
+    ],
+    imageAlt: "Market-neutral statistical arbitrage on NSE banking pairs",
   },
   {
-    type: "Data platform",
-    date: "Production · Maersk",
-    title: "Location Enrichment Service",
+    type: "AI · Full-stack",
+    date: "Side project",
+    title: "Chill Sessions Bot",
     description:
-      "Service that enriches and normalizes shipment location data at 2M+ records per day, reduced data loss by 15%, and unlocked real-time tracking for 10K+ shipments via Gnosis and OpenTech data providers.",
-    link: "#",
-    thumbClass: "thumb-violet",
-    image: "./images/location-service.png",
-    imageAlt: "Location enrichment service",
+      "Full-stack AI mental health chatbot (React, TypeScript, Node.js) with multi-provider LLM routing (Groq/Llama, OpenAI, HuggingFace), real-time sentiment and crisis detection, session-based conversation history, and evidence-based therapeutic prompting with safety guardrails tuned for Gen Z users.",
+    link: "https://github.com/DakshithaK/chill-sessions-bot-main",
+    thumbClass: "thumb-sky",
+    images: [
+      "./images/ChillSessions_home.png",
+      "./images/ChillSessions.png",
+      "./images/chillSessions_Login.png",
+    ],
+    imageAlt: "Chill Sessions Bot- AI mental health chatbot",
   },
 ];
 
@@ -351,9 +366,16 @@ function createProjectCard(project) {
   const article = document.createElement("article");
   article.className = "project-card reveal";
 
-  const thumb = project.image
-    ? `<div class="project-thumb ${project.thumbClass}">
-         <img src="${project.image}" alt="${project.imageAlt ?? project.title}" loading="lazy" />
+  const alt = project.imageAlt ?? project.title;
+  const imageSources = project.images ?? (project.image ? [project.image] : []);
+  const thumb = imageSources.length
+    ? `<div class="project-thumb ${project.thumbClass}${imageSources.length > 1 ? " project-thumb-slideshow" : ""}" data-slide-count="${imageSources.length}">
+         ${imageSources
+           .map(
+             (src, i) =>
+               `<img src="${src}" alt="${alt}" loading="lazy" style="--slide-index: ${i};" />`,
+           )
+           .join("\n         ")}
        </div>`
     : `<div class="project-thumb ${project.thumbClass}" aria-hidden="true"></div>`;
 
