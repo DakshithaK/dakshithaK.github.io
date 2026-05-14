@@ -15,6 +15,10 @@
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
       }
+      const navType = performance.getEntriesByType?.("navigation")?.[0]?.type;
+      if (navType === "reload" && location.hash) {
+        history.replaceState(null, "", location.pathname + location.search);
+      }
     </script>
     <title>Dakshitha K Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -344,14 +348,14 @@
             where I can own systems end-to-end.
           </p>
           <div class="links">
-            <a href="https://www.linkedin.com/in/dakshitha-k/" target="_blank" rel="noreferrer"
+            <a href="https://www.linkedin.com/in/dakshitha-k-a4b782204/" target="_blank" rel="noreferrer"
               >LinkedIn</a
             >
             <a href="https://github.com/DakshithaK" target="_blank" rel="noreferrer"
               >GitHub</a
             >
             <a href="mailto:dakshithakrishnagowda@gmail.com">Email</a>
-            <a href="#" aria-label="Open your resume PDF">Resume</a>
+            <a href="https://drive.google.com/file/d/199LEWUXplr9dC0Wc4NPz2pJ4KMvKSmyk/view?usp=drive_link" target="_blank" rel="noreferrer" aria-label="Open resume">Resume</a>
           </div>
         </div>
       </section>
@@ -400,10 +404,10 @@
         </div>
         <div class="garden-links">
           <div class="footer-links">
-            <a href="https://www.linkedin.com/in/dakshitha-k/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/dakshitha-k-a4b782204/" target="_blank" rel="noreferrer">LinkedIn</a>
             <a href="https://github.com/DakshithaK" target="_blank" rel="noreferrer">GitHub</a>
             <a href="mailto:dakshithakrishnagowda@gmail.com">Email</a>
-            <a href="#" aria-label="Open your resume PDF">Resume</a>
+            <a href="https://drive.google.com/file/d/199LEWUXplr9dC0Wc4NPz2pJ4KMvKSmyk/view?usp=drive_link" target="_blank" rel="noreferrer" aria-label="Open resume">Resume</a>
           </div>
         </div>
       </div>
