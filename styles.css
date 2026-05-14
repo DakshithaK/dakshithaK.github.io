@@ -291,7 +291,7 @@ h2 {
 
 .wave-ribbon path {
   fill: none;
-  stroke: rgb(196 170 141 / 0.42);
+  stroke: rgb(127 175 144 / 0.42);
   stroke-width: 1.9;
   stroke-linecap: round;
   vector-effect: non-scaling-stroke;
@@ -315,15 +315,15 @@ h2 {
 }
 
 .wave-ribbon-back path:nth-child(odd) {
-  stroke: rgb(187 160 129 / 0.34);
+  stroke: rgb(110 158 128 / 0.34);
 }
 
 .wave-ribbon-front path:nth-child(odd) {
-  stroke: rgb(176 145 113 / 0.44);
+  stroke: rgb(95 145 115 / 0.44);
 }
 
 .wave-ribbon-front path:nth-child(3n) {
-  stroke: rgb(208 184 157 / 0.36);
+  stroke: rgb(160 200 175 / 0.36);
 }
 
 .stars {
@@ -1380,13 +1380,81 @@ h2 {
 .project-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   transition: transform 320ms ease;
 }
 
 .project-card:hover .project-thumb img {
   transform: scale(1.04);
+}
+
+.project-thumb-slideshow img {
+  position: absolute;
+  inset: 0;
+  animation: project-slide 8s ease-in-out infinite;
+  animation-delay: calc(var(--slide-index, 0) * -4s);
+}
+
+.project-thumb-slideshow[data-slide-count="3"] img {
+  animation: project-slide-3 12s ease-in-out infinite;
+  animation-delay: calc(var(--slide-index, 0) * -4s);
+}
+
+.project-thumb-slideshow[data-slide-count="4"] img {
+  animation: project-slide-4 16s ease-in-out infinite;
+  animation-delay: calc(var(--slide-index, 0) * -4s);
+}
+
+@keyframes project-slide {
+  0%,
+  40% {
+    opacity: 1;
+  }
+  50%,
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes project-slide-3 {
+  0%,
+  29% {
+    opacity: 1;
+  }
+  33%,
+  96% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes project-slide-4 {
+  0%,
+  22% {
+    opacity: 1;
+  }
+  25%,
+  97% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-thumb-slideshow img {
+    animation: none;
+  }
+  .project-thumb-slideshow img:first-child {
+    opacity: 1;
+  }
 }
 
 .thumb-orange {
@@ -1403,6 +1471,18 @@ h2 {
 
 .thumb-violet {
   background: linear-gradient(150deg, #7a88ff 0%, #d162bb 100%);
+}
+
+.thumb-sky {
+  background: linear-gradient(160deg, #8eb2d4 0%, #6c93b8 100%);
+}
+
+.thumb-emerald {
+  background: linear-gradient(145deg, #9fc7a6 0%, #4a8266 100%);
+}
+
+.thumb-black {
+  background: #000000;
 }
 
 .project-topline {
